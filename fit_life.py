@@ -1,9 +1,10 @@
 # Проект FitLife - MVP версия 1.0
-WATER_PER_KG = 30
+WATER_PER_KG = float(30)
+WATER_PER_L = float(1000)
 
 # 1. Знакомство
 # Имя пользователя
-user_name = input('Ваше имя? ')
+user_name = input('Ваше имя? ').strip()
 user_name = user_name.title()
 # Возраст пользователя
 while True:
@@ -48,8 +49,8 @@ else:
     bmi_interpretation = 'Ожирение - необходима консультация врача'
 
 # Подсчет воды: вес * 30 мл
-water_ml = user_weight * float(WATER_PER_KG)
-water_l = water_ml / 1000
+water_ml = user_weight * WATER_PER_KG
+water_l = water_ml / WATER_PER_L
 water_l = round(water_l, 1)
 
 # 4. Вывод красивого результата
