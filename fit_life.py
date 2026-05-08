@@ -1,11 +1,16 @@
 # Проект FitLife - MVP версия 1.0
-WATER_PER_KG = float(30)
-WATER_PER_L = float(1000)
+WATER_PER_KG = 30.0
+WATER_PER_L = 1000.0
 
 # 1. Знакомство
 # Имя пользователя
-user_name = input('Ваше имя? ').strip()
-user_name = user_name.title()
+while True:
+    user_name = input('Ваше имя? ').strip()
+    if user_name and user_name.isalpha():
+        user_name = user_name.title()
+        break
+    else:
+        print('Имя должно содержать только буквы!')
 # Возраст пользователя
 while True:
     try:
