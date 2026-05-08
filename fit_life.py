@@ -37,6 +37,16 @@ while True:
 bmi = user_weight / (user_height ** 2)
 bmi = round(bmi, 1)
 
+# Пояснение по индексу массы тела
+if bmi < 18.5:
+    bmi_interpretation = 'Недостаточная масса тела - рекомендуется набрать вес'
+elif 18.5 <= bmi < 25:
+    bmi_interpretation = 'Нормальная масса тела - отличный результат!'
+elif 25 <= bmi < 30:
+    bmi_interpretation = 'Избыточная масса тела - рекомендуется снизить вес'
+else:
+    bmi_interpretation = 'Ожирение - необходима консультация врача'
+
 # Подсчет воды: вес * 30 мл
 water_ml = user_weight * float(WATER_PER_KG)
 water_l = water_ml / 1000
@@ -47,6 +57,6 @@ water_l = round(water_l, 1)
 print(f'\nПривет, {user_name}!\n')
 # Данные о здоровье пользователя
 print(f'Отчет для пользователя: {user_name} ({user_age} г.)')
-print(f'Индекс Массы Тела: {bmi}')
+print(f'Индекс Массы Тела: {bmi} - {bmi_interpretation}')
 print(f'Рекомендуемая норма воды: {water_l} л. в день\n')
 print('Расчет окончен. Будьте здоровы!')
